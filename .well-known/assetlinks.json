@@ -3,7 +3,7 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.pxmart.android.uat",
+      "package_name": "com.pxmart.android",
       "sha256_cert_fingerprints": [
         "7E:FB:20:EA:67:1C:4D:A2:E4:CC:47:CD:40:65:AF:BB:6C:CB:61:4F:47:AF:C4:F7:7F:87:2F:40:CF:EC:2D:1A"
       ]
