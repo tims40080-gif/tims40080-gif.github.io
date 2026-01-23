@@ -3,7 +3,7 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.example.applink",
+      "package_name": "px.com.nineyi.shop.s000002",
       "sha256_cert_fingerprints": [
         "55:1E:82:71:A1:65:F5:C2:36:57:2E:CE:2D:A3:A2:3F:77:F1:6F:0E:CE:FE:11:A7:AB:E0:C9:3E:73:0E:32:16"
       ]
