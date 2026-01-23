@@ -8,5 +8,17 @@
         "55:1E:82:71:A1:65:F5:C2:36:57:2E:CE:2D:A3:A2:3F:77:F1:6F:0E:CE:FE:11:A7:AB:E0:C9:3E:73:0E:32:16"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.pxmart.android",
+      "sha256_cert_fingerprints": [
+        "60:8D:4C:F7:8D:3E:13:25:B5:47:47:FD:47:61:02:3F:45:82:89:24:69:53:A5:66:70:C6:36:07:FB:DA:F7:C9"
+      ]
+    }
   }
 ]
