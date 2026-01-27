@@ -17,10 +17,9 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.pxmart.android.uat",
-      "sha256_cert_fingerprints":
-      [
-        "7E:FB:20:EA:67:1C:4D:A2:E4:CC:47:CD:40:65:AF:BB:6C:CB:61:4F:47:AF:C4:F7:7F:87:2F:40:CF:EC:2D:1A"
+      "package_name": "com.example.applink",
+      "sha256_cert_fingerprints": [
+        "55:1E:82:71:A1:65:F5:C2:36:57:2E:CE:2D:A3:A2:3F:77:F1:6F:0E:CE:FE:11:A7:AB:E0:C9:3E:73:0E:32:16"
       ]
     }
   }
