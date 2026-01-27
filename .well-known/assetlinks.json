@@ -5,10 +5,9 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.pxmart.android",
-      "sha256_cert_fingerprints":
-      [
-        "60:8D:4C:F7:8D:3E:13:25:B5:47:47:FD:47:61:02:3F:45:82:89:24:69:53:A5:66:70:C6:36:07:FB:DA:F7:C9"
+      "package_name": "px.com.nineyi.shop.s000002.uat",
+      "sha256_cert_fingerprints": [
+        "55:6A:64:C5:53:CA:05:FE:2E:A2:23:4B:CE:0E:7C:BE:C6:61:A1:2D:FF:84:A9:01:90:4D:EB:15:B8:FB:50:A0"
       ]
     }
   },
@@ -18,9 +17,10 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "px.com.nineyi.shop.s000002.uat",
-      "sha256_cert_fingerprints": [
-        "55:6A:64:C5:53:CA:05:FE:2E:A2:23:4B:CE:0E:7C:BE:C6:61:A1:2D:FF:84:A9:01:90:4D:EB:15:B8:FB:50:A0"
+      "package_name": "com.pxmart.android.uat",
+      "sha256_cert_fingerprints":
+      [
+        "7E:FB:20:EA:67:1C:4D:A2:E4:CC:47:CD:40:65:AF:BB:6C:CB:61:4F:47:AF:C4:F7:7F:87:2F:40:CF:EC:2D:1A"
       ]
     }
   }
