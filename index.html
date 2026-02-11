@@ -1,9 +1,16 @@
+分析了你提供的頁面結構，按鈕跑版的主要原因是因為 <a> 標籤（行內元素）與按鈕樣式在容器中沒有正確對齊，加上 padding 與寬度設定在不同螢幕尺寸下產生的擠壓。
+
+我為你修正了 CSS，使用 Flexbox 確保內容完美置中，並調整了按鈕的寬度適應性，讓它在手機上看起來更精緻。
+
+請將原始碼替換為以下版本：
+
+HTML
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deeplink 測試控制台</title>
+    <title>Deeplink 測試</title>
     <style>
         :root {
             --primary-color: #007AFF;
@@ -11,6 +18,11 @@
             --bg-color: #F2F2F7;
             --card-bg: #FFFFFF;
         }
+        
+        * {
+            box-sizing: border-box; /* 確保 padding 不會撐破寬度 */
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -18,35 +30,45 @@
             padding: 20px;
             background-color: var(--bg-color);
             color: #1C1C1E;
+            display: flex;
+            justify-content: center;
         }
+
         .container {
+            width: 100%;
             max-width: 500px;
-            margin: 0 auto;
+            margin-top: 20px;
         }
+
         .header {
             text-align: center;
             margin-bottom: 30px;
         }
+
         h1 {
             font-size: 1.5rem;
-            margin-bottom: 8px;
+            margin: 0 0 8px 0;
             color: #000;
         }
+
         .card {
             background: var(--card-bg);
-            padding: 20px;
+            padding: 24px;
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
         }
+
         .label {
             font-size: 0.85rem;
             font-weight: 600;
             color: #8E8E93;
             text-transform: uppercase;
             margin-bottom: 12px;
-            display: block;
         }
+
         .link-box {
             background: #F8F9FA;
             padding: 12px;
@@ -55,35 +77,47 @@
             font-size: 0.8rem;
             word-break: break-all;
             border: 1px solid #E5E5EA;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #48484A;
+            line-height: 1.4;
         }
+
+        /* 修正按鈕跑版關鍵：display: block 並移除 a 標籤預設邊距 */
         .btn {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 16px 20px;
             background-color: var(--primary-color);
             color: white;
             text-align: center;
             text-decoration: none;
             border-radius: 12px;
             font-weight: 600;
+            font-size: 1rem;
             border: none;
-            transition: opacity 0.2s;
-            cursor: pointer;
+            transition: transform 0.1s, background-color 0.2s;
+            -webkit-tap-highlight-color: transparent; /* 移除手機點擊高亮 */
         }
+
         .btn:active {
-            opacity: 0.7;
+            transform: scale(0.98);
+            background-color: #0056b3;
         }
+
         .btn-secondary {
             background-color: var(--success-color);
-            margin-top: 10px;
         }
+
+        .btn-secondary:active {
+            background-color: #28a745;
+        }
+
         .footer {
             text-align: center;
             font-size: 0.8rem;
             color: #8E8E93;
-            margin-top: 40px;
+            margin-top: 30px;
+            padding-bottom: 40px;
         }
     </style>
 </head>
@@ -91,14 +125,14 @@
 
     <div class="container">
         <div class="header">
-            <h1>Deeplink 測試</h1>
-            <p style="color: #666;">請點擊下方按鈕驗證 App 跳轉</p>
+            <h1>Deeplink 測試控制台</h1>
+            <p style="color: #666; margin: 0;">請點擊下方按鈕驗證 App 跳轉行為</p>
         </div>
 
         <div class="card">
             <span class="label">Custom Scheme (UAT)</span>
             <div class="link-box">
-                pxgo-uat://px-auth/authorize?utm_source=pxgo&...
+                pxgo-uat://px-auth/authorize?utm_source=pxgo&utm_medium=push&utm_campaign=0415_4-1_test&webUrl=https%3A%2F%2Fcustomer-uat.box.pxec.com.tw%2Fevent%2F353
             </div>
             <a href="pxgo-uat://px-auth/authorize?utm_source=pxgo&utm_medium=push&utm_campaign=0415_4-1_test&webUrl=https%3A%2F%2Fcustomer-uat.box.pxec.com.tw%2Fevent%2F353" class="btn">
                 立即觸發 Deep Link
@@ -106,19 +140,22 @@
         </div>
 
         <div class="card" style="border-top: 4px solid var(--success-color);">
-            <span class="label">Universal Link / App Link (網頁版)</span>
+            <span class="label">Universal Link / App Link</span>
             <div class="link-box">
-                https://customer-uat.box.pxec.com.tw/event/353
+                https://customer-uat.box.pxec.com.tw/event/321
             </div>
-            <a href="https://customer-uat.box.pxec.com.tw/event/353" class="btn btn-secondary">
+            <a href="https://customer-uat.box.pxec.com.tw/event/321" class="btn btn-secondary">
                 測試 Universal Link
             </a>
         </div>
 
         <div class="footer">
-            <p>※ 提示：若 Deep Link 無反應，請確認手機已安裝 UAT 版本 App</p>
+            <p>※ 測試提示：<br>
+            1. 確保已安裝 UAT 版本 App<br>
+            2. iOS 建議使用「備忘錄」或「Safari」測試<br>
+            3. Android 建議使用「Chrome」測試</p>
         </div>
     </div>
 
-</body>
+ </body>
 </html>
