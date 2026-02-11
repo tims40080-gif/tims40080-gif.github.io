@@ -3,42 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的第一個網頁</title>
+    <title>Deeplink 測試控制台</title>
     <style>
+        :root {
+            --primary-color: #007AFF;
+            --success-color: #34C759;
+            --bg-color: #F2F2F7;
+            --card-bg: #FFFFFF;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            margin: 40px;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: #1C1C1E;
         }
         .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
         }
         h1 {
-            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: #000;
         }
-        p {
-            color: #666;
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        .label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #8E8E93;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .link-box {
+            background: #F8F9FA;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            word-break: break-all;
+            border: 1px solid #E5E5EA;
+            margin-bottom: 15px;
+            color: #48484A;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            border: none;
+            transition: opacity 0.2s;
+            cursor: pointer;
+        }
+        .btn:active {
+            opacity: 0.7;
+        }
+        .btn-secondary {
+            background-color: var(--success-color);
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #8E8E93;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>你好！歡迎來到我的網頁</h1>
-        <p>這是一個使用 HTML 和 CSS 建立的簡單頁面。</p>
-        
-        <ul>
-            <li>第一項內容</li>
-            <li>第二項內容</li>
-            <li>第三項內容</li>
-        </ul>
+        <div class="header">
+            <h1>Deeplink 測試</h1>
+            <p style="color: #666;">請點擊下方按鈕驗證 App 跳轉</p>
+        </div>
 
-        <button onclick="alert('你點擊了按鈕！')">點擊我</button>
-    </div>
-
-</body>
-</html>
+        <div class="card">
+            <span class="label">Custom Scheme (UAT)</span>
+            <div class="link-box">
+                pxgo-uat://px-auth/authorize?utm_source=pxgo&...
+            </div>
+            <a href="pxgo-uat://px
